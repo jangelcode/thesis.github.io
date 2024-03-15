@@ -20,12 +20,10 @@
             font-size: 18px;
             margin-bottom: 10px;
         }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
         }
     </style>
 </head>
@@ -35,7 +33,6 @@
         <div class="description">
             This project explores the impact of district wealth on the participation in the Arizona Empowerment Scholarship Account (ESA) program. Below are the resources generated from the analysis:
         </div>
-        <embed src="Honors_Thesis.pdf" width="500" height="375" type="application/pdf" >
     </div>
 
     <div class="container">
@@ -43,7 +40,7 @@
         <p>
             The detailed analysis examining the effects of district wealth on ESA program participation. This comprehensive study leverages data from the Arizona Department of Education and employs OLS regression to understand the dynamics of participation across economic backgrounds.
         </p>
-        <a href="Honors_Thesis.pdf" target="_blank">View Honors Thesis</a>
+        <iframe src="Honors_Thesis.pdf"></iframe>
     </div>
 
     <div class="container">
@@ -51,7 +48,7 @@
         <p>
             A presentation that summarizes the program's background, motivation, methodology, and key findings. It provides a visual overview of the statistical analysis and conclusions.
         </p>
-        <a href="ESA_Participation_Model_Slides.pdf" target="_blank">View Model Slides</a>
+        <iframe src="ESA_Participation_Model_Slides.pdf"></iframe>
     </div>
 
     <div class="container">
@@ -59,8 +56,9 @@
         <p>
             The Jupyter Notebook contains the code used for data analysis and visualization. It outlines the empirical methodology, data processing, and regression analysis performed during the study.
         </p>
-        <p>Note: For GitHub Pages, we recommend converting the Jupyter Notebook to HTML or PDF for easier viewing.</p>
+        <p>Note: Embedding a Jupyter Notebook directly is not straightforward due to its interactive nature. Consider converting it to a PDF or HTML file for embedding, or link to a viewer like NBViewer for direct access.</p>
         <a href="ESA.ipynb" target="_blank">View Analysis Notebook</a>
     </div>
 </body>
 </html>
+
