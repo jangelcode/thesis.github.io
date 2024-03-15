@@ -4,27 +4,22 @@
     <meta charset="UTF-8">
     <title>Honors Thesis</title>
     <style>
-        body, html {
+        html, body {
             height: 100%;
             margin: 0;
+        }
+        .page-contents {
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-        .page-contents {
-            width: 100%; /* Set the container width to 65% of the page width */
-        }
-        iframe {
-            width: 65%; /* Make the iframe fill the container */
-            height: 100vh; /* Optional: Adjust the height as needed */
-            border: none; /* Optional: Removes the border around the iframe */
+            height: 100%;
         }
     </style>
 </head>
 <body>
-<div class="page-contents">
-    <iframe src="../Honors_Thesis.pdf"></iframe>
-</div>
+    <div class="page-contents">
+        <embed src="../Honors_Thesis.pdf" width="500" height="375" type="application/pdf">
+    </div>
 </body>
 </html>
 
