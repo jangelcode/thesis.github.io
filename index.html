@@ -33,7 +33,6 @@
 </head>
 <body>
     <div class="nav">
-        <!-- Adjusted the IDs and for attributes for clarity -->
         <input type="radio" id="homeTab" name="tab" hidden checked>
         <label for="homeTab">Home</label>
 
@@ -43,12 +42,19 @@
         <input type="radio" id="slidesTab" name="tab" hidden>
         <label for="slidesTab">ESA Participation Model Slides</label>
 
-        <input type="radio" id="notebookTab" name="tab" hidden> <!-- Checked by default -->
+        <input type="radio" id="notebookTab" name="tab" hidden>
         <label for="notebookTab">ESA Analysis Notebook</label>
     </div>
 
-    <div id="homeContent" class="page">
-        <h2> This is the home page </h2>
+    <div id="homeContent" class="page active">
+        <h2> Overview </h2>
+        <p>This repository contains the materials related to my honors thesis project, "District Wealth and Arizona School Voucher Program Participation." The project explores the
+        allocation of funds in the Arizona Empowerment Scholarship Account (ESA) program and aims to understand the relationship between school district wealth and participation 
+        in the ESA program.</p>
+        <h2> Project Summary </h2>
+        <p>I conducted an in-depth analysis using a multiple linear regression model to investigate the impact of school district wealth on participation in the Arizona ESA program. 
+            One significant finding was that program funds were more frequently allocated to poorly performing districts with lower poverty rates rather than poorly performing 
+            districts with higher poverty rates.</p>
     </div>
 
     <div id="thesisContent" class="page">
@@ -59,7 +65,7 @@
         <iframe src="templates/presentation.html" style="width: 100%; height: 100vh;"></iframe>
     </div>
 
-    <div id="notebookContent" class="page active">
+    <div id="notebookContent" class="page">
         <iframe src="templates/notebook.html" style="width: 100%; height: 100vh;"></iframe>
     </div>
 <script>
