@@ -48,7 +48,7 @@
         border-bottom: 2px solid transparent;
         background: #ecf0f1;
         user-select: none;
-        transition: background 0.4s, padding-left 0.2s;
+        /* transition: background 0.4s, padding-left 0.2s; */
         }
         input[type="radio"]:checked + .page + label.nav {
         background: #9b59b6;
@@ -67,28 +67,36 @@
     </style>
 </head>
 <body>
-<div class="layout">
-    <input type="radio" id="tab1" name="tab" checked>
-    <label for="tab1" class="nav">Honors Thesis</label>
+    <div class="layout">
+        <!-- Overview section -->
+        <div class="page overview" style="display: block;">
+            <h1>Welcome to the Arizona ESA Program Analysis</h1>
+            <p>This project explores the impact of district wealth on participation in the Arizona Empowerment Scholarship Account (ESA) program.</p>
+            <!-- Add more content about your project here -->
+        </div>
+        
+        <!-- Tabs for navigation -->
+        <input type="radio" id="tab1" name="tab">
+        <label for="tab1" class="nav">Honors Thesis</label>
+        
+        <input type="radio" id="tab2" name="tab">
+        <label for="tab2" class="nav">ESA Participation Model Slides</label>
+        
+        <input type="radio" id="tab3" name="tab">
+        <label for="tab3" class="nav">ESA Analysis Notebook</label>
     
-    <input type="radio" id="tab2" name="tab">
-    <label for="tab2" class="nav">ESA Participation Model Slides</label>
+        <!-- Tab content -->
+        <div class="page" id="content1">
+            <iframe src="honorsThesis.html" style="width: 100%; height: 100vh;"></iframe>
+        </div>
     
-    <input type="radio" id="tab3" name="tab">
-    <label for="tab3" class="nav">ESA Analysis Notebook</label>
-
-    <div class="page" id="content1">
-        <iframe src="honorsThesis.html" style="width: 100%; height: 100vh;"></iframe>
+        <div class="page" id="content2">
+            <iframe src="presentation.html" style="width: 100%; height: 100vh;"></iframe>
+        </div>
+    
+        <div class="page" id="content3">
+            <iframe src="notebook.html" style="width: 100%; height: 100vh;"></iframe>
+        </div>
     </div>
-
-    <div class="page" id="content2">
-        <iframe src="presentation.html" style="width: 100%; height: 100vh;"></iframe>
-    </div>
-
-    <div class="page" id="content3">
-        <iframe src="notebook.html" style="width: 100%; height: 100vh;"></iframe>
-    </div>
-</div>
 </body>
 </html>
-
