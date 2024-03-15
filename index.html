@@ -4,90 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arizona ESA Program Analysis</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-            color: #333;
+        * {
+        font-family: 'Work Sans', sans-serif;
+        box-sizing: border-box;
         }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            border-radius: 8px;
+        html, body {
+        height: 100%;
+        color: #1a1b1c;
+        margin: 0;
+        padding: 0;
         }
-        .header {
-            font-size: 28px;
-            color: #007BFF;
-            margin-bottom: 20px;
+        label, a {
+        cursor: pointer;
+        user-select: none;
+        text-decoration: none;
+        display: inline-block;
+        color: inherit;
+        transition: border 0.2s;
+        border-bottom: 5px solid rgba(142, 68, 173, 0.2);
+        padding: 3px 2px;
         }
-        .description {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 20px;
+        label:hover, a:hover {
+        border-bottom-color: #9b59b6;
         }
-        iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            border-radius: 8px;
+        .layout {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        grid-template-rows: 50px 1fr;
+        grid-template-columns: repeat(3, 1fr);
         }
-        h2 {
-            color: #0056b3;
+        input[type="radio"] {
+        display: none;
         }
-        p {
-            font-size: 14px;
-            line-height: 1.6;
+        label.nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        background: #ecf0f1;
+        user-select: none;
+        transition: background 0.4s, padding-left 0.2s;
         }
-        a {
-            display: inline-block;
-            background: #007bff;
-            color: #fff;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        input[type="radio"]:checked + .page + label.nav {
+        background: #9b59b6;
+        color: #ffffff;
+        padding-left: 20px;
         }
-        a:hover {
-            background: #0056b3;
+        .page {
+        grid-column: 1 / -1;
+        grid-row-start: 2;
+        padding: 20px;
+        display: none; /* Hide pages by default */
+        }
+        input[type="radio"]:checked + .page {
+        display: block; /* Show the selected page */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">Arizona Empowerment Scholarship Account (ESA) Analysis</div>
-        <div class="description">
-            This project explores the impact of district wealth on the participation in the Arizona Empowerment Scholarship Account (ESA) program. Below are the resources generated from the analysis:
-        </div>
+
+<div class="layout">
+    <!-- Tab navigation -->
+    <input type="radio" id="tab1" name="tab" checked>
+    <label for="tab1" class="nav">Honors Thesis</label>
+    
+    <input type="radio" id="tab2" name="tab">
+    <label for="tab2" class="nav">ESA Participation Model Slides</label>
+    
+    <input type="radio" id="tab3" name="tab">
+    <label for="tab3" class="nav">ESA Analysis Notebook</label>
+
+    <!-- Tab content -->
+    <div class="page" id="content1">
+        <!-- Content for Honors Thesis goes here -->
     </div>
 
-    <div class="container">
-        <h2>Honors Thesis</h2>
-        <p>
-            The detailed analysis examining the effects of district wealth on ESA program participation. This comprehensive study leverages data from the Arizona Department of Education and employs OLS regression to understand the dynamics of participation across economic backgrounds.
-        </p>
-        <iframe src="Honors_Thesis.pdf"></iframe>
+    <div class="page" id="content2">
+        <!-- Content for ESA Participation Model Slides goes here -->
     </div>
 
-    <div class="container">
-        <h2>ESA Participation Model Slides</h2>
-        <p>
-            A presentation that summarizes the program's background, motivation, methodology, and key findings. It provides a visual overview of the statistical analysis and conclusions.
-        </p>
-        <iframe src="ESA_Participation_Model_Slides.pdf"></iframe>
+    <div class="page" id="content3">
+        <!-- Content for ESA Analysis Notebook goes here -->
     </div>
-
-    <div class="container">
-        <h2>ESA Analysis Notebook</h2>
-        <p>
-            The Jupyter Notebook contains the code used for data analysis and visualization. It outlines the empirical methodology, data processing, and regression analysis performed during the study.
-        </p>
-        <a href="ESA.ipynb" target="_blank">View Analysis Notebook</a>
-    </div>
+</div>
 </body>
 </html>
+
