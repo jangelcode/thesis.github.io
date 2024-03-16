@@ -11,36 +11,34 @@
             padding: 0;
             background: #f4f4f4;
             color: #333;
-            display: flex; /* Enable flex layout for the body */
         }
 
         .nav {
             background: #007bff;
             color: white;
-            padding: 30px;
-            padding-right: 30px;
+            padding: 10px; /* Reduced padding */
             display: flex;
-            flex-direction: column; /* Stack tabs vertically */
-            height: 100vh; /* Full height of the viewport */
-            box-sizing: border-box; /* Include padding in the height calculation */
+            flex-direction: row; /* Lay out tabs horizontally */
+            align-items: center; /* Align items in a flex container */
+            box-sizing: border-box;
         }
 
         .nav label {
             cursor: pointer;
-            margin-bottom: 10px;
-            padding: 10px;
-            white-space: nowrap; /* This prevents text wrapping */
+            margin-right: 10px; /* Space between tabs */
+            padding: 5px; /* Reduced padding for smaller tabs */
+            white-space: nowrap;
         }
 
         .page {
             display: none;
             padding: 20px;
-            flex-grow: 1; /* Allow the content area to take up the remaining space */
         }
 
         .page.active {
             display: block;
         }
+
     </style>
 </head>
 <body>
