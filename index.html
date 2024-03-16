@@ -11,26 +11,31 @@
             padding: 0;
             background: #f4f4f4;
             color: #333;
+            display: flex; /* Enable flex layout for the body */
         }
+
         .nav {
             background: #007bff;
             color: white;
             padding: 20px;
             display: flex;
-            justify-content: space-around;
-            flex-direction: column;
+            flex-direction: column; /* Stack tabs vertically */
+            height: 100vh; /* Full height of the viewport */
+            box-sizing: border-box; /* Include padding in the height calculation */
         }
+
         .nav label {
             cursor: pointer;
-            margin: 10px 0;
+            margin-bottom: 10px; /* Add some space between the tabs */
             padding: 10px;
-            width: auto;
-            text-align: center;
         }
+
         .page {
             display: none;
             padding: 20px;
+            flex-grow: 1; /* Allow the content area to take up the remaining space */
         }
+
         .page.active {
             display: block;
         }
