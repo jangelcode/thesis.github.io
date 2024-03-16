@@ -2,23 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ESA Participation Model Slides</title>
+    <title>Honors Thesis</title>
     <style>
         html, body {
             height: 100%;
             margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
         }
-        .page-contents {
+
+        .nav {
+            background: #007bff;
+            color: white;
+            padding: 20px 10px;
             display: flex;
-            justify-content: center;
+            flex-direction: row;
             align-items: center;
-            height: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
+
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin-right: 15px;
+            padding: 10px;
+            white-space: nowrap;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav a:hover, .nav a.active {
+            background-color: #0056b3;
+        }
+
+        /* Additional styles */
     </style>
 </head>
 <body>
-<div class="page-contents">
-    <embed src="../ESA_Participation_Model_Slides.pdf" width="60%" height="100%" type="application/pdf">
-</div>
+    <div class="nav">
+        <a href="../index.html">Home</a>
+        <a href="honorsThesis.html">Paper</a>
+        <a href="presentation.html" class="active">Presentation</a>
+        <a href="notebook.html">Jupyter Notebook</a>
+    </div>
+    <div class="page-contents">
+        <embed src="../ESA_Participation_Model_Slides.pdf" width="60%" height="100%" type="application/pdf">
+    </div>
 </body>
 </html>
