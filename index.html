@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arizona ESA Program Analysis</title>
+    <title>Dynamic Content Loading</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -72,73 +72,71 @@
             text-align: justify;
             line-height: 1.6;
         }
-
     </style>
 </head>
 <body>
-    <div class="nav">
-        <input type="radio" id="homeTab" name="tab" hidden checked>
-        <label for="homeTab">Home</label>
-
-        <input type="radio" id="thesisTab" name="tab" hidden>
-        <label for="thesisTab">Paper</label>
-
-        <input type="radio" id="slidesTab" name="tab" hidden>
-        <label for="slidesTab">Presentation</label>
-
-        <input type="radio" id="notebookTab" name="tab" hidden>
-        <label for="notebookTab">Jupyter Notebook</label>
-    </div>
-    <div class="main-container">
-        <div id="homeContent" class="page active">
-            <h2> Abstract </h2>
-            <p>This study estimates the effect of district wealth on Arizona Empowerment Scholarship Account program participation using 
-                data from the Arizona Department of Education. We find that students from poor districts are not more likely to 
-                participate as school performance decreases. Conversely, those from wealthy districts do increase participation as school 
-                performance decreases. We briefly try to explain the observed heterogeneity through survey results and 
-                commenting on the program design.</p>
-        </div>
-    </div>
-    <div id="thesisContent" class="page">
-        <iframe src="templates/honorsThesis.html" style="width: 100%; height: 100vh;"></iframe>
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <button class="nav-link active" data-target="homeContent">Home</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="thesisContent">Paper</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="slidesContent">Presentation</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-target="notebookContent">Jupyter Notebook</button>
+            </li>
+        </ul>
     </div>
 
-    <div id="slidesContent" class="page">
-        <iframe src="templates/presentation.html" style="width: 100%; height: 100vh;"></iframe>
+    <div id="content" class="main-container">
+        <!-- Dynamic content will be loaded here -->
     </div>
 
-    <div id="notebookContent" class="page">
-        <iframe src="templates/notebook.html" style="width: 100%; height: 100vh;"></iframe>
-    </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const tabs = document.querySelectorAll('.nav input[type="radio"]');
-    const pages = document.querySelectorAll('.page');
-    const labels = document.querySelectorAll('.nav label');
+    <script>
+        // JavaScript for loading content dynamically
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Prevent default anchor click behavior
+                    e.preventDefault();
 
-    function updateActiveTab() {
-        labels.forEach(label => {
-            if (document.getElementById(label.getAttribute('for')).checked) {
-                label.classList.add('active-tab');
-            } else {
-                label.classList.remove('active-tab');
-            }
-        });
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('change', function() {
-            pages.forEach(page => {
-                page.classList.remove('active');
+                    const targetId = e.target.getAttribute('data-target');
+                    // Placeholder for content loading logic
+                    loadContent(targetId);
+                });
             });
-            const activePage = document.getElementById(tab.id.replace('Tab', 'Content'));
-            activePage.classList.add('active');
-            updateActiveTab();
-        });
-    });
 
-    updateActiveTab();
-});
-</script>
+            function loadContent(targetId) {
+                // Example: Load content based on the targetId
+                // This should be replaced with actual content loading logic
+                const content = document.getElementById('content');
+                switch(targetId) {
+                    case 'homeContent':
+                        content.innerHTML = '<p>Home content goes here.</p>';
+                        break;
+                    case 'thesisContent':
+                        content.innerHTML = '<p>Paper content goes here.</p>';
+                        break;
+                    case 'slidesContent':
+                        content.innerHTML = '<p>Presentation content goes here.</p>';
+                        break;
+                    case 'notebookContent':
+                        content.innerHTML = '<p>Jupyter Notebook content goes here.</p>';
+                        break;
+                    default:
+                        content.innerHTML = '<p>Click a tab to load content.</p>';
+                }
+            }
+
+            // Initially load home content
+            loadContent('homeContent');
+        });
+    </script>
 </body>
 </html>
+
