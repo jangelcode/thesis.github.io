@@ -1,8 +1,4 @@
-# Thesis
-
-## Project Title: 
-
-District Wealth and Arizona School Voucher Program Participation
+# District Wealth and Arizona School Voucher Program Participation
 
 ## Overview
 
