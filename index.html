@@ -23,117 +23,36 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        .nav label {
-            cursor: pointer;
+        .nav a {
+            text-decoration: none;
+            color: white;
             margin-right: 15px;
             padding: 10px;
             white-space: nowrap;
             transition: background-color 0.3s ease;
         }
 
-        .nav label:hover, .nav .active-tab {
+        .nav a:hover, .nav a.active {
             background-color: #0056b3;
         }
 
-        .main-container {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            background: white;
-            margin: 20px auto;
-            width: 90%;
-            max-width: 800px;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .page.active {
-            display: block;
-        }
-
-        .active-tab {
-            text-decoration: underline;
-            text-decoration-color: white;
-        }
-
-        #homeContent {
-            padding-left: 0;
-        }
-
-        h2 {
-            color: #007bff;
-            margin-top: 0;
-        }
-
-        p {
-            text-align: justify;
-            line-height: 1.6;
-        }
-
+        /* Add other styles as needed */
     </style>
 </head>
 <body>
     <div class="nav">
-        <input type="radio" id="homeTab" name="tab" hidden checked>
-        <label for="homeTab">Home</label>
-
-        <input type="radio" id="thesisTab" name="tab" hidden>
-        <label for="thesisTab">Paper</label>
-
-        <input type="radio" id="slidesTab" name="tab" hidden>
-        <label for="slidesTab">Presentation</label>
-
-        <input type="radio" id="notebookTab" name="tab" hidden>
-        <label for="notebookTab">Jupyter Notebook</label>
+        <a href="index.html" class="active">Home</a>
+        <a href="templates/honorsThesis.html">Paper</a>
+        <a href="templates/presentation.html">Presentation</a>
+        <a href="templates/notebook.html">Jupyter Notebook</a>
     </div>
     <div class="main-container">
-        <div id="homeContent" class="page active">
-            <h2> Abstract </h2>
-            <p>This study estimates the effect of district wealth on Arizona Empowerment Scholarship Account program participation using 
-                data from the Arizona Department of Education. We find that students from poor districts are not more likely to 
-                participate as school performance decreases. Conversely, those from wealthy districts do increase participation as school 
-                performance decreases. We briefly try to explain the observed heterogeneity through survey results and 
-                commenting on the program design.</p>
+        <!-- Home tab content goes here -->
+        <div id="homeContent">
+            <h2>Abstract</h2>
+            <p>This study estimates the effect of district wealth on Arizona Empowerment Scholarship Account program participation using data from the Arizona Department of Education...</p>
         </div>
     </div>
-    <div id="thesisContent" class="page">
-        <iframe src="templates/honorsThesis.html" style="width: 100%; height: 100vh;"></iframe>
-    </div>
-
-    <div id="slidesContent" class="page">
-        <iframe src="templates/presentation.html" style="width: 100%; height: 100vh;"></iframe>
-    </div>
-
-    <div id="notebookContent" class="page">
-        <iframe src="templates/notebook.html" style="width: 100%; height: 100vh;"></iframe>
-    </div>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const tabs = document.querySelectorAll('.nav input[type="radio"]');
-    const pages = document.querySelectorAll('.page');
-    const labels = document.querySelectorAll('.nav label');
-
-    function updateActiveTab() {
-        labels.forEach(label => {
-            if (document.getElementById(label.getAttribute('for')).checked) {
-                label.classList.add('active-tab');
-            } else {
-                label.classList.remove('active-tab');
-            }
-        });
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('change', function() {
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            const activePage = document.getElementById(tab.id.replace('Tab', 'Content'));
-            activePage.classList.add('active');
-            updateActiveTab();
-        });
-    });
-
-    updateActiveTab();
-});
-</script>
+    <!-- No need for additional divs for other content; each content will be in its own HTML file -->
 </body>
 </html>
