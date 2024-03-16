@@ -8,24 +8,50 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            border: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f4f4;
         }
-        .page-contents {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            border: none;
+
+        .main-container {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            height: auto; /* Adjust as needed */
+            margin-left: auto;
+            margin-right: auto;
         }
+
+        h2 {
+            color: #007bff;
+        }
+
+        .pdf-viewer {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            height: 500px; /* Adjust height as needed */
+            background: #fff;
+            overflow: auto; /* Adds scroll to the PDF viewer if needed */
+        }
+
+        embed {
+            width: 100%;
+            height: 100%; /* Adjust if needed to fit within the container */
+        }
+
     </style>
 </head>
 <body>
     <div class="main-container">
         <h2>Paper</h2>
-        <p>
-            <embed src="../Honors_Thesis.pdf" width=60% height=100% type="application/pdf">
-        </p>
+        <div class="pdf-viewer">
+            <embed src="../Honors_Thesis.pdf" type="application/pdf" style="width:100%; height:100%;">
+        </div>
     </div>
 </body>
 </html>
+
 
