@@ -12,44 +12,42 @@
             background: #f4f4f4;
         }
 
-        .main-container {
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            background: white;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 800px;
-            height: auto; /* Adjust as needed */
-            margin-left: auto;
-            margin-right: auto;
+        .nav {
+            background: #007bff;
+            color: white;
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
-        h2 {
-            color: #007bff;
-        }
-
-        .pdf-viewer {
-            border: 1px solid #ddd;
+        .nav a {
+            text-decoration: none;
+            color: white;
+            margin-right: 15px;
             padding: 10px;
-            margin-top: 20px;
-            height: 500px; /* Adjust height as needed */
-            background: #fff;
-            overflow: auto; /* Adds scroll to the PDF viewer if needed */
+            white-space: nowrap;
+            transition: background-color 0.3s ease;
         }
 
-        embed {
-            width: 100%;
-            height: 100%; /* Adjust if needed to fit within the container */
+        .nav a:hover, .nav a.active {
+            background-color: #0056b3;
         }
 
+        /* Additional styles */
     </style>
 </head>
 <body>
+    <div class="nav">
+        <a href="../index.html">Home</a>
+        <a href="honorsThesis.html" class="active">Paper</a>
+        <a href="presentation.html">Presentation</a>
+        <a href="notebook.html">Jupyter Notebook</a>
+    </div>
     <div class="main-container">
         <h2>Paper</h2>
-        <div class="pdf-viewer">
-            <embed src="../Honors_Thesis.pdf" type="application/pdf" style="width:100%; height:100%;">
-        </div>
+        <embed src="../Honors_Thesis.pdf" type="application/pdf" style="width:100%; height:100%;">
     </div>
 </body>
 </html>
